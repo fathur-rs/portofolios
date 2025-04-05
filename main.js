@@ -2,7 +2,9 @@ const menuBtn = document.getElementById("menu-btn");
 const mobileMenu = document.getElementById("mobile-menu");
 let isOpen = false;
 
-menuBtn.addEventListener("click", () => {
+// Toggle menu when burger is clicked
+menuBtn.addEventListener("click", (e) => {
+  e.stopPropagation(); 
   isOpen = !isOpen;
 
   if (isOpen) {
@@ -11,6 +13,19 @@ menuBtn.addEventListener("click", () => {
   } else {
     mobileMenu.classList.remove("max-h-96", "opacity-100", "scale-100");
     mobileMenu.classList.add("max-h-0", "opacity-0", "scale-95");
+  }
+});
+
+// Close menu if clicking outside
+document.addEventListener("click", (e) => {
+  if (
+    isOpen &&
+    !mobileMenu.contains(e.target) &&
+    !menuBtn.contains(e.target)
+  ) {
+    mobileMenu.classList.remove("max-h-96", "opacity-100", "scale-100");
+    mobileMenu.classList.add("max-h-0", "opacity-0", "scale-95");
+    isOpen = false;
   }
 });
 
@@ -135,7 +150,7 @@ async function loadYAMLData() {
       descDiv.appendChild(toolDiv);
     }
 
-    // ✅ Append everything
+    // Append everything
     wrapper.appendChild(titleDiv);
     wrapper.appendChild(descDiv);
     projectContainer.appendChild(wrapper);
