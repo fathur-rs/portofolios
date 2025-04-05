@@ -18,14 +18,28 @@
     <nav
       class="fixed top-4 left-1/2 transform -translate-x-1/2 bg-white/30 backdrop-blur-md shadow-md rounded-full px-6 py-2 flex items-center justify-between w-[90%] max-w-4xl z-50"
     >
-      <div class="text-2xl font-semibold text-gray-800">Fathurrahman Syarief</div>
+      <div class="text-2xl font-semibold text-gray-800">
+        Fathurrahman Syarief
+      </div>
 
       <!-- Desktop Menu -->
       <ul class="hidden md:flex gap-6 text-gray-700 text-sm font-medium">
         <li><a href="#" class="hover:text-blue-800 transition">About</a></li>
-        <li><a href="#experience" class="hover:text-blue-800 transition">Experience</a></li>
-        <li><a href="#education" class="hover:text-blue-800 transition">Education</a></li>
-        <li><a href="#projects" class="hover:text-blue-800 transition">Projects</a></li>
+        <li>
+          <a href="#experience" class="hover:text-blue-800 transition"
+            >Experience</a
+          >
+        </li>
+        <li>
+          <a href="#education" class="hover:text-blue-800 transition"
+            >Education</a
+          >
+        </li>
+        <li>
+          <a href="#projects" class="hover:text-blue-800 transition"
+            >Projects</a
+          >
+        </li>
       </ul>
 
       <!-- Mobile Menu Button -->
@@ -42,34 +56,44 @@
     <!-- Mobile Menu -->
     <!-- Mobile Menu (fixed to viewport, scrolls with content) -->
     <ul
-  id="mobile-menu"
-  class="md:hidden fixed top-16 left-1/2 transform -translate-x-1/2 backdrop-blur-md shadow-lg rounded-xl px-6 py-4 w-[80%] max-w-sm text-center z-40 
-         transition-all duration-300 overflow-hidden max-h-0 opacity-0 scale-95"
->
-  <li class="py-2">
-    <a href="#" class="text-gray-700 hover:text-blue-800 transition">About</a>
-  </li>
-  <li class="py-2">
-    <a href="#experience" class="text-gray-700 hover:text-blue-800 transition">Experience</a>
-  </li>
-  <li class="py-2">
-    <a href="#education" class="text-gray-700 hover:text-blue-800 transition">Educations</a>
-  </li>
-  <li class="py-2">
-    <a href="#projects" class="text-gray-700 hover:text-blue-800 transition">Projects</a>
-  </li>
-</ul>
-
+      id="mobile-menu"
+      class="md:hidden fixed top-16 left-1/2 transform -translate-x-1/2 backdrop-blur-md shadow-lg rounded-xl px-6 py-4 w-[80%] max-w-sm text-center z-40 transition-all duration-300 overflow-hidden max-h-0 opacity-0 scale-95"
+    >
+      <li class="py-2">
+        <a href="#" class="text-gray-700 hover:text-blue-800 transition"
+          >About</a
+        >
+      </li>
+      <li class="py-2">
+        <a
+          href="#experience"
+          class="text-gray-700 hover:text-blue-800 transition"
+          >Experience</a
+        >
+      </li>
+      <li class="py-2">
+        <a
+          href="#education"
+          class="text-gray-700 hover:text-blue-800 transition"
+          >Educations</a
+        >
+      </li>
+      <li class="py-2">
+        <a href="#projects" class="text-gray-700 hover:text-blue-800 transition"
+          >Projects</a
+        >
+      </li>
+    </ul>
 
     <!-- JavaScript -->
     <script>
       const menuBtn = document.getElementById("menu-btn");
       const mobileMenu = document.getElementById("mobile-menu");
       let isOpen = false;
-    
+
       menuBtn.addEventListener("click", () => {
         isOpen = !isOpen;
-    
+
         if (isOpen) {
           mobileMenu.classList.remove("max-h-0", "opacity-0", "scale-95");
           mobileMenu.classList.add("max-h-96", "opacity-100", "scale-100");
@@ -79,9 +103,87 @@
         }
       });
     </script>
-    
 
     <div class="max-w-4xl mx-auto p-6 bg-white mt-8">
+      <!-- Social Navbar -->
+      <!-- Desktop: Floating Vertical Right -->
+      <div
+        class="hidden md:flex fixed top-1/2 right-4 transform -translate-y-1/2 z-50 flex-col space-y-4"
+      >
+        <a
+          href="https://www.linkedin.com/in/fathurrahman-syarief/"
+          target="_blank"
+          title="LinkedIn"
+          class="flex items-center justify-center w-10 h-10 rounded-full bg-white shadow-md hover:bg-blue-100 transition"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+            class="w-5 h-5"
+          />
+        </a>
+        <a
+          href="https://github.com/fathur-rs"
+          target="_blank"
+          title="GitHub"
+          class="flex items-center justify-center w-10 h-10 rounded-full bg-white shadow-md hover:bg-gray-100 transition"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+            class="w-5 h-5"
+          />
+        </a>
+        <a
+          href="https://huggingface.co/fathurfrs"
+          target="_blank"
+          title="Hugging Face"
+          class="flex items-center justify-center w-10 h-10 rounded-full bg-white shadow-md hover:bg-yellow-100 transition"
+        >
+          <img
+            src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg"
+            class="w-5 h-5"
+          />
+        </a>
+      </div>
+
+      <!-- Mobile: Bottom Horizontal Bar -->
+      <div
+        class="md:hidden fixed bottom-4 left-1/2 transform -translate-x-1/2 shadow-md rounded-full px-4 py-2 flex justify-center gap-6 z-50 backdrop-blur-md"
+      >
+        <a
+          href="https://linkedin.com/in/yourusername"
+          target="_blank"
+          title="LinkedIn"
+          class="w-8 h-8 flex items-center justify-center hover:scale-110 transition"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+            class="w-5 h-5"
+          />
+        </a>
+        <a
+          href="https://github.com/yourusername"
+          target="_blank"
+          title="GitHub"
+          class="w-8 h-8 flex items-center justify-center hover:scale-110 transition"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+            class="w-5 h-5"
+          />
+        </a>
+        <a
+          href="https://huggingface.co/yourusername"
+          target="_blank"
+          title="Hugging Face"
+          class="w-8 h-8 flex items-center justify-center hover:scale-110 transition"
+        >
+          <img
+            src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg"
+            class="w-5 h-5"
+          />
+        </a>
+      </div>
+
       <!-- Header -->
       <header class="text-center mb-8"></header>
 
