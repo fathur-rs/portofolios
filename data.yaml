@@ -1,0 +1,142 @@
+summary:
+  💻 Results-driven Data Scientist with expertise in machine learning,
+  advanced statistical analytics, and cloud technologies. Proficient in
+  Python, SQL, and GCP, I excel at crafting data-driven solutions that
+  enhance efficiency, optimize operations, and empower strategic
+  decision-making. Proven track record of delivering measurable impact
+  and value across diverse industries.
+
+
+experiences:
+  # PNS
+  - company: Ministry of Energy and Mineral Resources Indonesia (KESDM)
+    title: Internal Auditor
+    date: June 2025 – present
+    points:
+      - Conducting internal audits related to the oil and mineral sectors.
+  # BRI
+  - company: Bank Rakyat Indonesia (BRI)
+    title: Data Analyst Intern
+    date: September 2024 – January 2025
+    points:
+      - Assigned to the Planning, Budgeting, & Performance Management (PPM) Division.
+      - Automated business processes using Python, reducing a two-week manual workflow to 3 hours (90%-time savings) and ensuring 100% accuracy by eliminating input errors.
+      - Analyzed BRI branch transaction, then built XGBoost models to predict transaction surges (5% error rate), and improved resource allocation efficiency by 20% for optimal staffing during peak periods.
+      - Developed a real-time NLP pipeline using Python, Apache Airflow, and Machine Learning to analyze BRI Mobile Banking app (BRImo) reviews. Achieved 97.8% accuracy with a fine-tuned Distilled IndoBERT model, delivering sentiment insights, word clouds, and topic modeling for data-driven decisions.
+  # BANGKIT
+  - company: Bangkit Academy led by Google, Tokopedia, Gojek, & Traveloka
+    title: Cloud Computing Cohort
+    date: August 2023 – January 2024
+    points:
+      - Collaborated on the development of a food recommendation mobile app for vegan enthusiasts as a capstone project
+      - Achieved 92% average precision in food image detection using CSL-YOLO model
+      - Deployed the model as a FastAPI Dockerized API on GCE with NVIDIA T4
+  # CENTRAL AI
+  - company: Central AI
+    title: Data Scientist Intern
+    date: August 2022 – December 2022
+    points:
+      - Built and automated an Airflow pipeline to scrape daily Indonesia news portal data, storing text in Google Cloud Storage (GCS).
+      - Enhanced an existing sentiment system by integrating a state-of-the-art IndoBERT model, improving accuracy to 98%. Developed a Flask based inference API for centralized access, enabling seamless integration with other systems.
+      - Deployed the model inference API on Google Cloud Compute Engine, enabling real-time predictions and integration with client-facing dashboard while optimizing resource usage.
+      - Initiated and delivered a project to forecast cloud compute usage and costs across AWS, GCP, Alibaba Cloud, and Central AI's servers using ARIMA. Analyzed 2020-2022 data (usage logs, uptime, electricity, costs) to achieve accurate predictions with low MSE, optimizing resource allocation by 15% and delivering significant cost savings.
+  # UNIVERSITAS AIRLANGGA
+  - company: Universitas Airlangga
+    title: Research Assistant 
+    date: January 2022 – July 2022
+    points:
+      - Assisted in teaching the Algorithmic Programming subject, helping students understand key concepts in algorithms and data structures
+      - Co-authored a research paper on the use of machine learning in healthcare industry
+
+technical_experience:
+  title: Technical Tools
+  description: I have experience with a breadth of tools for machine learning, data analysis, and data pipelines
+  categories:
+    - name: Programming Languages (high proficiency)
+      items: [Python]
+    - name: Programming Languages (some proficiency)
+      items: [R, SQL, MATLAB, VBA]
+    - name: Machine Learning Tools
+      items: [Tensorflow, Scikit-Learn, PyTorch, MLFlow, RapidMiner, SuperAnnotate]
+    - name: Cloud Services
+      items: [Google Cloud Services (Vertex AI, Run, BigQuery, GCS, GKE, GCE)]
+    - name: Data Analysis & Visualization Tools
+      items: [Microsoft Excel, Tableau, SPSS, Looker Studio, KNIME]
+    - name: Workflow & Automation Tools
+      items: [Apache Airflow, Docker, Selenium, Terraform]
+    - name: Database Management Tools
+      items: [PostgreSQL, MongoDB, Redis]
+
+education:
+  - year: "2020 – 2024"
+    degree: "Bachelor of Data Science (S.Si.D.)"
+    major: "Data Science Technology"
+    institution: "Universitas Airlangga"
+    note: "Cum Laude"
+  - year: "2017 – 2020"
+    degree: "Science Major"
+    institution: "SMAN 34 Jakarta"
+
+projects:
+  - name: TRxNSLATE
+    link: "https://github.com/fathur-rs/trxnslate"
+    descriptions:
+      - Developed a system to digitize handwritten Indonesian medical prescriptions using OCR. Leveraged YOLOv10 to detect key elements (e.g., drug names, dosages) and TrOCR to convert handwritten text into digital format. Integrated open-source Llama 3.1 to generate easy-to-understand explanations of the prescription
+      - This project supports the Indonesian prescription format and language, helping patients who struggle to read medical prescriptions due to lack of expertise or poor handwriting. It also aims to streamline healthcare workflows by automating the prescription review process, enhancing efficiency and accuracy in medical care
+    tools:
+      - name: Pytorch
+        icon: pytorch.svg
+      - name: Flask
+        icon: flask.svg
+      - name: HuggingFace
+        icon: huggingface.svg
+      - name: Sqlite
+        icon: sqlite.svg
+      - name: SuperAnnotate
+        icon: superannotate.jpeg
+      - name: Open AI
+        icon: openai.svg
+  - name: Tweetoxicity
+    link: "https://github.com/fathur-rs/Tweetoxicity-2.0"
+    descriptions:
+      - Tweetoxicity is a web app that utilizes a 98%-accuracy fine-tuned Distilled IndoBERT to predict the sentiment of Twitter/X users based on their recent tweets or retweets. Users can input a username or topic, and the app will scrape the last 100 tweets, analyze the sentiment, and display the results in a dashboard
+    tools:
+      - name: Pytorch
+        icon: pytorch.svg
+      - name: FastAPI
+        icon: FastAPI.svg
+      - name: HuggingFace
+        icon: huggingface.svg
+      - name: Docker
+        icon: docker.svg
+      - name: BeautifulSoup
+        icon: bs4.jpg
+      - name: Streamlit
+        icon: streamlit.png
+  - name: BRImoSentiment
+    link: "https://github.com/fathur-rs/BRImoSentiment"
+    descriptions:
+      - During my internship at Bank Rakyat Indonesia (BRI) as a Data Analyst, I developed a real-time sentiment analysis system for monitoring Google Play Store reviews of the BRI Mobile Banking application, we called the project as project BRImoSentiment
+      - I automated the scraping of Google Play Store reviews for the BRI Mobile Banking app using Python, capturing reviews from the last 24 hours. The pipeline, orchestrated with Apache Airflow, handled scraping, storing data in MongoDB, preprocessing, model inference using a 97.8%-accuracy fine-tuned Distilled IndoBERT optimized with OpenVino, and storing results back in the database. The system also included email alerts for error or no reviews available. The sentiment analysis results were integrated into a dashboard used by another division within BRI to monitor user feedback
+    tools:
+      - name: Pytorch
+        icon: pytorch.svg
+      - name: Apache Airflow
+        icon: Apache Airflow.svg
+      - name: HuggingFace
+        icon: huggingface.svg
+      - name: MongoDB
+        icon: mongodb-original.svg
+      - name: OpenVino
+        icon: openvino-2.svg
+  - name: nitter-harvest
+    link: "https://github.com/fathur-rs/nitter-harvest"
+    descriptions:
+      - Built with Selenium and BeautifulSoup, nitter-harvest scrapes Twitter/X data through Nitter (X Mirror), including topics, hashtags, and user tweets. Bypassing the use of paid APIs
+    tools:
+      - name: BeautifulSoup
+        icon: bs4.jpg
+      - name: Selenium
+        icon: selenium.svg
+
+
