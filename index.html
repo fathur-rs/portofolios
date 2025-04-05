@@ -15,42 +15,90 @@
   </head>
 
   <body class="bg-white text-gray-800">
+    <nav
+      class="fixed top-4 left-1/2 transform -translate-x-1/2 bg-white/30 backdrop-blur-md shadow-md rounded-full px-6 py-2 flex items-center justify-between w-[90%] max-w-4xl z-50"
+    >
+      <div class="text-2xl font-semibold text-gray-800">Fathurrahman Syarief</div>
+
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex gap-6 text-gray-700 text-sm font-medium">
+        <li><a href="#" class="hover:text-blue-800 transition">About</a></li>
+        <li><a href="#experience" class="hover:text-blue-800 transition">Experience</a></li>
+        <li><a href="#education" class="hover:text-blue-800 transition">Education</a></li>
+        <li><a href="#projects" class="hover:text-blue-800 transition">Projects</a></li>
+      </ul>
+
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden">
+        <button
+          id="menu-btn"
+          class="text-gray-700 hover:text-blue-800 transition text-2xl"
+        >
+          ☰
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <!-- Mobile Menu (fixed to viewport, scrolls with content) -->
+    <ul
+  id="mobile-menu"
+  class="md:hidden fixed top-16 left-1/2 transform -translate-x-1/2 backdrop-blur-md shadow-lg rounded-xl px-6 py-4 w-[80%] max-w-sm text-center z-40 
+         transition-all duration-300 overflow-hidden max-h-0 opacity-0 scale-95"
+>
+  <li class="py-2">
+    <a href="#" class="text-gray-700 hover:text-blue-800 transition">About</a>
+  </li>
+  <li class="py-2">
+    <a href="#experience" class="text-gray-700 hover:text-blue-800 transition">Experience</a>
+  </li>
+  <li class="py-2">
+    <a href="#education" class="text-gray-700 hover:text-blue-800 transition">Educations</a>
+  </li>
+  <li class="py-2">
+    <a href="#projects" class="text-gray-700 hover:text-blue-800 transition">Projects</a>
+  </li>
+</ul>
+
+
+    <!-- JavaScript -->
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      let isOpen = false;
+    
+      menuBtn.addEventListener("click", () => {
+        isOpen = !isOpen;
+    
+        if (isOpen) {
+          mobileMenu.classList.remove("max-h-0", "opacity-0", "scale-95");
+          mobileMenu.classList.add("max-h-96", "opacity-100", "scale-100");
+        } else {
+          mobileMenu.classList.remove("max-h-96", "opacity-100", "scale-100");
+          mobileMenu.classList.add("max-h-0", "opacity-0", "scale-95");
+        }
+      });
+    </script>
+    
+
     <div class="max-w-4xl mx-auto p-6 bg-white mt-8">
       <!-- Header -->
-      <header class="text-center mb-8">
-        <h1 class="text-4xl font-bold text-gray-800">Fathurrahman Syarief</h1>
-        <p class="text-gray-600 mt-2">
-          <a 
-            class="relative inline-block font-semibold text-blue-800"
-          >
-            Jakarta
-          </a>
-          •
-          <a
-            href="https://www.linkedin.com/in/fathurrahman-syarief/"
-            class="relative inline-block font-semibold text-blue-800 no-underline after:content-[''] after:block after:border-b-2 after:border-blue-800 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-250 after:ease-in-out"
-          >
-            LinkedIn
-          </a>
-          •
-          <a
-            href="https://github.com/fathur-rs"
-            class="relative inline-block font-semibold text-blue-800 no-underline after:content-[''] after:block after:border-b-2 after:border-blue-800 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-250 after:ease-in-out"
-          >
-            GitHub
-          </a>
-        </p>
-      </header>
+      <header class="text-center mb-8"></header>
 
       <!-- Summary -->
       <section class="mb-8">
         <p class="text-lg text-gray-700 text-justify">
-          💻 Results-driven Data Scientist with expertise in machine learning, advanced statistical analytics, and cloud technologies. Proficient in Python, SQL, and GCP, I excel at crafting data-driven solutions that enhance efficiency, optimize operations, and empower strategic decision-making. Proven track record of delivering measurable impact and value across diverse industries.
+          💻 Results-driven Data Scientist with expertise in machine learning,
+          advanced statistical analytics, and cloud technologies. Proficient in
+          Python, SQL, and GCP, I excel at crafting data-driven solutions that
+          <section id="experience"></section> enhance efficiency, optimize operations, and empower strategic
+          decision-making. Proven track record of delivering measurable impact
+          and value across diverse industries.
         </p>
       </section>
 
       <!-- Experience -->
-      <section>
+      <section id="experiences">
         <h2
           class="text-2xl font-semibold text-gray-800 border-b-2 border-gray-200 pb-2 mb-4"
         >
@@ -71,7 +119,7 @@
             </li>
           </ul>
         </div>
-        
+
         <!-- Bank Rakyat Indonesia -->
         <div class="mb-6">
           <h3 class="text-xl font-semibold text-blue-800">
@@ -86,13 +134,22 @@
               (PPM) Division
             </li>
             <li>
-              Automated business processes using Python, reducing a two-week manual workflow to 3 hours (90%-time savings) and ensuring 100% accuracy by eliminating input errors. 
+              Automated business processes using Python, reducing a two-week
+              manual workflow to 3 hours (90%-time savings) and ensuring 100%
+              accuracy by eliminating input errors.
             </li>
             <li>
-              Analyzed BRI branch transaction, then built XGBoost models to predict transaction surges (5% error rate), and improved resource allocation efficiency by 20% for optimal staffing during peak periods. 
+              Analyzed BRI branch transaction, then built XGBoost models to
+              predict transaction surges (5% error rate), and improved resource
+              allocation efficiency by 20% for optimal staffing during peak
+              periods.
             </li>
             <li>
-              Developed a real-time NLP pipeline using Python, Apache Airflow, and Machine Learning to analyze BRI Mobile Banking app (BRImo) reviews. Achieved 97.8% accuracy with a fine-tuned Distilled IndoBERT model, delivering sentiment insights, word clouds, and topic modeling for data-driven decisions.
+              Developed a real-time NLP pipeline using Python, Apache Airflow,
+              and Machine Learning to analyze BRI Mobile Banking app (BRImo)
+              reviews. Achieved 97.8% accuracy with a fine-tuned Distilled
+              IndoBERT model, delivering sentiment insights, word clouds, and
+              topic modeling for data-driven decisions.
             </li>
           </ul>
         </div>
@@ -129,16 +186,27 @@
           </p>
           <ul class="list-disc pl-4 md:pl-12 mt-2 text-gray-700">
             <li>
-              Built and automated an Airflow pipeline to scrape daily Indonesia news portal data, storing text in Google Cloud Storage (GCS).
+              Built and automated an Airflow pipeline to scrape daily Indonesia
+              news portal data, storing text in Google Cloud Storage (GCS).
             </li>
             <li>
-              Enhanced an existing sentiment system by integrating a state-of-the-art IndoBERT model, improving accuracy to 98%. Developed a Flask based inference API for centralized access, enabling seamless integration with other systems.
+              Enhanced an existing sentiment system by integrating a
+              state-of-the-art IndoBERT model, improving accuracy to 98%.
+              Developed a Flask based inference API for centralized access,
+              enabling seamless integration with other systems.
             </li>
             <li>
-              Deployed the model inference API on Google Cloud Compute Engine, enabling real-time predictions and integration with client-facing dashboard while optimizing resource usage.
+              Deployed the model inference API on Google Cloud Compute Engine,
+              enabling real-time predictions and integration with client-facing
+              dashboard while optimizing resource usage.
             </li>
             <li>
-              Initiated and delivered a project to forecast cloud compute usage and costs across AWS, GCP, Alibaba Cloud, and Central AI's servers using ARIMA. Analyzed 2020-2022 data (usage logs, uptime, electricity, costs) to achieve accurate predictions with low MSE, optimizing resource allocation by 15% and delivering significant cost savings.
+              Initiated and delivered a project to forecast cloud compute usage
+              and costs across AWS, GCP, Alibaba Cloud, and Central AI's servers
+              using ARIMA. Analyzed 2020-2022 data (usage logs, uptime,
+              electricity, costs) to achieve accurate predictions with low MSE,
+              optimizing resource allocation by 15% and delivering significant
+              cost savings.
             </li>
           </ul>
         </div>
@@ -173,7 +241,9 @@
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-12 md:gap-4">
           <!-- First Column: Titles -->
-          <div class="col-span-1 md:col-span-3 text-xl font-semibold text-blue-800 space-y-4">
+          <div
+            class="col-span-1 md:col-span-3 text-xl font-semibold text-blue-800 space-y-4"
+          >
             <p>Technical Tools</p>
           </div>
           <!-- Second Column: Descriptions -->
@@ -204,6 +274,7 @@
                 Excel, Tableau, SPSS, Looker Studio, KNIME
               </li>
               <li>
+                <section id="education"></section>
                 <strong>Workflow & Automation Tools:</strong> Apache Airflow,
                 Docker, Selenium, Terraform
               </li>
@@ -217,7 +288,7 @@
       </section>
 
       <!-- Education Section -->
-      <section class="mb-8">
+      <section id="education"  class="mb-8">
         <h2
           class="text-2xl font-semibold text-gray-800 border-b-2 border-gray-200 pb-2 mb-4"
         >
@@ -231,9 +302,7 @@
             <p>2020 - 2024</p>
           </div>
           <!-- Second Column: Descriptions -->
-          <div
-            class="col-span-1 md:col-span-9 text-gray-700 space-y-2"
-          >
+          <div class="col-span-1 md:col-span-9 text-gray-700 space-y-2">
             <p>
               <span class="font-bold"
                 >Bachelor of Data Science (S.Si.D.), Data Science
@@ -257,7 +326,11 @@
           <div
             class="col-span-1 md:col-span-9 text-gray-700 space-y-2 text-justify"
           >
-            <p><span class="font-bold">Science Major</span>; <span class="font-bold underline">SMAN 34 Jakarta</span></p>
+            <p>
+              <section id="projects"></section>
+              <span class="font-bold">Science Major</span>;
+              <span class="font-bold underline">SMAN 34 Jakarta</span>
+            </p>
           </div>
         </div>
       </section>
@@ -313,28 +386,58 @@
             </p>
             <div class="flex flex-wrap gap-4">
               <span class="relative group">
-                <img src="icon/pytorch.svg" class="w-10 h-10 aspect-square">
-                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100" aria-hidden="true">PyTorch</span>
+                <img src="icon/pytorch.svg" class="w-10 h-10 aspect-square" />
+                <span
+                  class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100"
+                  aria-hidden="true"
+                  >PyTorch</span
+                >
               </span>
               <span class="relative group">
-                <img src="icon/flask.svg" class="w-10 h-10 aspect-square">
-                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100" aria-hidden="true">Flask</span>
+                <img src="icon/flask.svg" class="w-10 h-10 aspect-square" />
+                <span
+                  class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100"
+                  aria-hidden="true"
+                  >Flask</span
+                >
               </span>
               <span class="relative group">
-                <img src="icon/huggingface.svg" class="w-10 h-10 aspect-square">
-                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100" aria-hidden="true">HuggingFace</span>
+                <img
+                  src="icon/huggingface.svg"
+                  class="w-10 h-10 aspect-square"
+                />
+                <span
+                  class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100"
+                  aria-hidden="true"
+                  >HuggingFace</span
+                >
               </span>
               <span class="relative group">
-                <img src="icon/sqlite.svg" class="w-10 h-10 aspect-square">
-                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100" aria-hidden="true">Sqlite</span>
+                <img src="icon/sqlite.svg" class="w-10 h-10 aspect-square" />
+                <span
+                  class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100"
+                  aria-hidden="true"
+                  >Sqlite</span
+                >
               </span>
               <span class="relative group">
-                <img src="icon/superannotate.jpeg" class="w-10 h-10 aspect-square">
-                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100" aria-hidden="true">SuperAnnotate</span>
+                <img
+                  src="icon/superannotate.jpeg"
+                  class="w-10 h-10 aspect-square"
+                />
+                <span
+                  class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100"
+                  aria-hidden="true"
+                  >SuperAnnotate</span
+                >
               </span>
               <span class="relative group">
-                <img src="icon/openai.svg" class="w-10 h-10 aspect-square">
-                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100" aria-hidden="true">Open AI</span>
+                <img src="icon/openai.svg" class="w-10 h-10 aspect-square" />
+                <span
+                  class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100"
+                  aria-hidden="true"
+                  >Open AI</span
+                >
               </span>
             </div>
           </div>
@@ -377,28 +480,55 @@
             </p>
             <div class="flex flex-wrap gap-4 text-sm font-semibold font-mono">
               <span class="relative group">
-                <img src="icon/pytorch.svg" class="w-10 h-10 aspect-square">
-                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100" aria-hidden="true">Pytorch</span>
+                <img src="icon/pytorch.svg" class="w-10 h-10 aspect-square" />
+                <span
+                  class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100"
+                  aria-hidden="true"
+                  >Pytorch</span
+                >
               </span>
               <span class="relative group">
-                <img src="icon/FastAPI.svg" class="w-10 h-10 aspect-square">
-                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100" aria-hidden="true">FastAPI</span>
+                <img src="icon/FastAPI.svg" class="w-10 h-10 aspect-square" />
+                <span
+                  class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100"
+                  aria-hidden="true"
+                  >FastAPI</span
+                >
               </span>
               <span class="relative group">
-                <img src="icon/huggingface.svg" class="w-10 h-10 aspect-square">
-                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100" aria-hidden="true">HuggingFace</span>
+                <img
+                  src="icon/huggingface.svg"
+                  class="w-10 h-10 aspect-square"
+                />
+                <span
+                  class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100"
+                  aria-hidden="true"
+                  >HuggingFace</span
+                >
               </span>
               <span class="relative group">
-                <img src="icon/docker.svg" class="w-10 h-10 aspect-square">
-                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100" aria-hidden="true">Docker</span>
+                <img src="icon/docker.svg" class="w-10 h-10 aspect-square" />
+                <span
+                  class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100"
+                  aria-hidden="true"
+                  >Docker</span
+                >
               </span>
               <span class="relative group">
-                <img src="icon/bs4.jpg" class="w-10 h-10 aspect-square">
-                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100" aria-hidden="true">BeautifulSoup</span>
+                <img src="icon/bs4.jpg" class="w-10 h-10 aspect-square" />
+                <span
+                  class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100"
+                  aria-hidden="true"
+                  >BeautifulSoup</span
+                >
               </span>
               <span class="relative group">
-                <img src="icon/streamlit.png" class="w-10 h-10 aspect-square">
-                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100" aria-hidden="true">Streamlit</span>
+                <img src="icon/streamlit.png" class="w-10 h-10 aspect-square" />
+                <span
+                  class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100"
+                  aria-hidden="true"
+                  >Streamlit</span
+                >
               </span>
             </div>
           </div>
@@ -452,24 +582,56 @@
             </p>
             <div class="flex flex-wrap gap-4 text-sm font-semibold font-mono">
               <span class="relative group">
-                <img src="icon/pytorch.svg" class="w-10 h-10 aspect-square">
-                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100" aria-hidden="true">Pytorch</span>
+                <img src="icon/pytorch.svg" class="w-10 h-10 aspect-square" />
+                <span
+                  class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100"
+                  aria-hidden="true"
+                  >Pytorch</span
+                >
               </span>
               <span class="relative group">
-                <img src="icon/Apache Airflow.svg" class="w-10 h-10 aspect-square">
-                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100" aria-hidden="true">Apache Airflow</span>
+                <img
+                  src="icon/Apache Airflow.svg"
+                  class="w-10 h-10 aspect-square"
+                />
+                <span
+                  class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100"
+                  aria-hidden="true"
+                  >Apache Airflow</span
+                >
               </span>
               <span class="relative group">
-                <img src="icon/huggingface.svg" class="w-10 h-10 aspect-square">
-                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100" aria-hidden="true">HuggingFace</span>
+                <img
+                  src="icon/huggingface.svg"
+                  class="w-10 h-10 aspect-square"
+                />
+                <span
+                  class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100"
+                  aria-hidden="true"
+                  >HuggingFace</span
+                >
               </span>
               <span class="relative group">
-                <img src="icon/mongodb-original.svg" class="w-10 h-10 aspect-square">
-                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100" aria-hidden="true">MongoDB</span>
+                <img
+                  src="icon/mongodb-original.svg"
+                  class="w-10 h-10 aspect-square"
+                />
+                <span
+                  class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100"
+                  aria-hidden="true"
+                  >MongoDB</span
+                >
               </span>
               <span class="relative group">
-                <img src="icon/openvino-2.svg" class="w-16 h-10 aspect-square">
-                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100" aria-hidden="true">OpenVino</span>
+                <img
+                  src="icon/openvino-2.svg"
+                  class="w-16 h-10 aspect-square"
+                />
+                <span
+                  class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100"
+                  aria-hidden="true"
+                  >OpenVino</span
+                >
               </span>
             </div>
           </div>
@@ -510,12 +672,20 @@
             </p>
             <div class="flex flex-wrap gap-4 text-sm font-semibold font-mono">
               <span class="relative group">
-                <img src="icon/bs4.jpg" class="w-10 h-10 aspect-square">
-                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100" aria-hidden="true">BeautifulSoup</span>
+                <img src="icon/bs4.jpg" class="w-10 h-10 aspect-square" />
+                <span
+                  class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100"
+                  aria-hidden="true"
+                  >BeautifulSoup</span
+                >
               </span>
               <span class="relative group">
-                <img src="icon/selenium.svg" class="w-10 h-10 aspect-square">
-                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100" aria-hidden="true">Selenium</span>
+                <img src="icon/selenium.svg" class="w-10 h-10 aspect-square" />
+                <span
+                  class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300 bg-gray-700 text-white py-2 px-4 rounded text-xs whitespace-nowrap group-hover:opacity-100"
+                  aria-hidden="true"
+                  >Selenium</span
+                >
               </span>
             </div>
           </div>
