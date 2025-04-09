@@ -96,6 +96,7 @@ projects:
         icon: superannotate.jpeg
       - name: Open AI
         icon: openai.svg
+    tags: [Computer Vision, Large Language Model]
   - name: Tweetoxicity
     link: "https://github.com/fathur-rs/Tweetoxicity-2.0"
     descriptions:
@@ -113,6 +114,7 @@ projects:
         icon: bs4.jpg
       - name: Streamlit
         icon: streamlit.png
+    tags: [Sentiment Analysis, Web application]
   - name: BRImoSentiment
     link: "https://github.com/fathur-rs/BRImoSentiment"
     descriptions:
@@ -129,6 +131,7 @@ projects:
         icon: mongodb-original.svg
       - name: OpenVino
         icon: openvino-2.svg
+    tags: [Sentiment Analysis, DAG Jobs]
   - name: nitter-harvest
     link: "https://github.com/fathur-rs/nitter-harvest"
     descriptions:
@@ -138,5 +141,18 @@ projects:
         icon: bs4.jpg
       - name: Selenium
         icon: selenium.svg
+    tags: [Data Mining]
+  - name: Online Retail Analysis
+    link: "https://github.com/fathur-rs/online-retail-shop/blob/main/online-shop-sales-analysis-data-analytic.ipynb"
+    descriptions:
+      - Performed end-to-end analysis including data preprocessing, visualization, market basket analysis, and geographical insights to uncover customer behavior patterns and optimize sales strategies
+    tools:
+      - name: Pandas
+        icon: Pandas.svg
+      - name: Sqlite
+        icon: sqlite.svg
+      - name: Matplotlib
+        icon: Matplotlib.svg
+    tags: [Data Analysis]
 
 

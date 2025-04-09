@@ -4,7 +4,7 @@ let isOpen = false;
 
 // Toggle menu when burger is clicked
 menuBtn.addEventListener("click", (e) => {
-  e.stopPropagation(); 
+  e.stopPropagation();
   isOpen = !isOpen;
 
   if (isOpen) {
@@ -18,11 +18,7 @@ menuBtn.addEventListener("click", (e) => {
 
 // Close menu if clicking outside
 document.addEventListener("click", (e) => {
-  if (
-    isOpen &&
-    !mobileMenu.contains(e.target) &&
-    !menuBtn.contains(e.target)
-  ) {
+  if (isOpen && !mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
     mobileMenu.classList.remove("max-h-96", "opacity-100", "scale-100");
     mobileMenu.classList.add("max-h-0", "opacity-0", "scale-95");
     isOpen = false;
@@ -110,14 +106,27 @@ async function loadYAMLData() {
     titleDiv.className = "col-span-1 md:col-span-3 space-y-4";
     titleDiv.innerHTML = `
           <p class="text-gray-600 mt-2 flex">
-            <a href="${project.link}" class="relative text-xl inline-block font-semibold text-blue-800 no-underline after:content-[''] after:block after:border-b-2 after:border-blue-800 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-250 after:ease-in-out">
+            <a href="${
+              project.link
+            }" class="relative text-xl inline-block font-semibold text-blue-800 no-underline after:content-[''] after:block after:border-b-2 after:border-blue-800 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-250 after:ease-in-out">
               ${project.name}
             </a>
             <svg width="16" height="16" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M3.5 3C3.22386 3 3 3.22386 3 3.5C3 3.77614 3.22386 4 3.5 4V3ZM8.5 3.5H9C9 3.22386 8.77614 3 8.5 3V3.5ZM8 8.5C8 8.77614 8.22386 9 8.5 9C8.77614 9 9 8.77614 9 8.5H8ZM2.64645 8.64645C2.45118 8.84171 2.45118 9.15829 2.64645 9.35355C2.84171 9.54882 3.15829 9.54882 3.35355 9.35355L2.64645 8.64645ZM3.5 4H8.5V3H3.5V4ZM8 3.5V8.5H9V3.5H8ZM8.14645 3.14645L2.64645 8.64645L3.35355 9.35355L8.85355 3.85355L8.14645 3.14645Z" class="fill-current text-blue-800 dark:text-blue-800"></path>
             </svg>
           </p>
+            <div class="flex flex-wrap gap-2 mt-2">
+    ${project.tags
+      .map(
+        (tag) =>
+          `<span class="px-2 py-1 text-xs font-medium text-blue-800 bg-gray-200 rounded hover:bg-gray-300">${tag}</span>`
+      )
+      .join("")}
+  </div>
         `;
+        
+    const tagsDiv = document.createElement("div");
+    tagsDiv.className = "flex flex-wrap gap-2 mt-2";
 
     const descDiv = document.createElement("div");
     descDiv.className =
@@ -125,6 +134,8 @@ async function loadYAMLData() {
     descDiv.innerHTML = project.descriptions
       .map((desc) => `<p>${desc}</p>`)
       .join("");
+
+    descDiv.appendChild(tagsDiv);
 
     // 🛠 Tools block
     if (project.tools && project.tools.length > 0) {
