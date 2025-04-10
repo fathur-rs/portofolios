@@ -10,8 +10,8 @@ summary:
 experiences:
   # PNS
   - company: Ministry of Energy and Mineral Resources Indonesia (KESDM)
-    title: Internal Auditor
-    date: June 2025 – present
+    title: Auditor
+    date: TMT June 2025
     points:
       - Conducting internal audits related to the oil and mineral sectors.
   # BRI
@@ -96,6 +96,8 @@ projects:
         icon: superannotate.jpeg
       - name: Open AI
         icon: openai.svg
+      - name: Docker
+        icon: docker.svg
     tags: [Computer Vision, Large Language Model]
   - name: Tweetoxicity
     link: "https://github.com/fathur-rs/Tweetoxicity-2.0"
